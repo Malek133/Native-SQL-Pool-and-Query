@@ -11,7 +11,7 @@ interface Todo {
 async function getTodos() {
 
   const client = new Pool({
-    connectionString:'postgresql://neondb_owner:npg_Gpr0ltF3hCxe@ep-lively-frost-a9szdzy5.gwc.azure.neon.tech/neondb?sslmode=require',
+    connectionString:process.env.DATABASE_URL,
   })
   const {rows} = await client.query<Todo>(`SELECT * from todo`)
   return rows
