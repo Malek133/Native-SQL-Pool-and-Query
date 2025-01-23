@@ -1,12 +1,7 @@
+import { Todo } from '@/lib/type'
 import {Pool} from 'pg'
 
-interface Todo {
-  id: number;
-  title: string;
-  isCompleted: boolean;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
+
 
 async function getTodos() {
 
